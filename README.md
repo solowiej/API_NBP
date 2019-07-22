@@ -29,8 +29,8 @@
 UWAGA! (jeśli tabela posiada pole MID, to obliczmay średnią MID), jeśli posiada pole ASK, to robimy to dla tego pola, jeśli posiada BID, to robimy dla pola BID.
 UWAGA! (usuńmy z opcji podawanie tabeli B - przysparza sporo problemów i ciężko jest wydobyć z niej jakiekolwiek dane)
 
-PODPOWIEDŹ: Trzeba zmodyfikować wygląd klasy z XML (Rate). 
-PODPOWIEDŹ: Wystarczy dopisać brakujące pole (Mid).
+*PODPOWIEDŹ: Trzeba zmodyfikować wygląd klasy z XML (Rate). 
+*PODPOWIEDŹ: Wystarczy dopisać brakujące pole (Mid).
 
 3. Wykrywanie braku danych. 
 Spróbuj obsłużyć komunikat o braku rekordów w tabeli. Wykryj taką informację (np. url: http://api.nbp.pl/api/exchangerates/rates/C/USD/2018-01-01/2018-01-01/?format=XML )

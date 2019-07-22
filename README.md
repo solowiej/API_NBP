@@ -21,7 +21,7 @@
 
 1. Zastanów się jak można zmienić budowę aplikacji, aby była bardziej obiektowa (uniknąć metod statycznych i przenieść część odpowiedzialności na klasy).
 
-2. Dodaj do main'a kolejne pytanie (podobnie jak robimy pytanie użytkownika o walutę, daty itp.) zadaj pytanie o to co chciałby obliczyć. W zależności od WCZEŚNIEJ WYBRANEJ TABELI użytkownik powinien mieć możliwość obliczenia:
+2. Dodaj do main'a kolejne pytanie zadaj pytanie o to co chciałby obliczyć. W zależności od WCZEŚNIEJ WYBRANEJ TABELI użytkownik powinien mieć możliwość obliczenia:
     - kursu średniego (oblicz średnią kursu)
     - odchyleń maksymalnych (ile wynosiła różnica między min a max)
     - maximów i minimów (wypisz ile wynosiły)

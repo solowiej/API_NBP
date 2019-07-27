@@ -21,16 +21,16 @@
 
 1. Zastanów się jak można zmienić budowę aplikacji, aby była bardziej obiektowa (uniknąć metod statycznych i przenieść część odpowiedzialności na klasy).
 
-2. Dodaj do main'a kolejne pytanie (podobnie jak robimy pytanie użytkownika o walutę, daty itp.) zadaj pytanie o to co chciałby obliczyć. W zależności od WCZEŚNIEJ WYBRANEJ TABELI użytkownik powinien mieć możliwość obliczenia:
-    a. kursu średniego (oblicz średnią kursu)
-    b. odchyleń maksymalnych (ile wynosiła różnica między min a max)
-    c. maximów i minimów (wypisz ile wynosiły)
+2. Dodaj do main'a kolejne pytanie zadaj pytanie o to co chciałby obliczyć. W zależności od WCZEŚNIEJ WYBRANEJ TABELI użytkownik powinien mieć możliwość obliczenia:
+    - kursu średniego (oblicz średnią kursu)
+    - odchyleń maksymalnych (ile wynosiła różnica między min a max)
+    - maximów i minimów (wypisz ile wynosiły)
 
 UWAGA! (jeśli tabela posiada pole MID, to obliczmay średnią MID), jeśli posiada pole ASK, to robimy to dla tego pola, jeśli posiada BID, to robimy dla pola BID.
 UWAGA! (usuńmy z opcji podawanie tabeli B - przysparza sporo problemów i ciężko jest wydobyć z niej jakiekolwiek dane)
 
-PODPOWIEDŹ: Trzeba zmodyfikować wygląd klasy z XML (Rate). 
-PODPOWIEDŹ: Wystarczy dopisać brakujące pole (Mid).
+- PODPOWIEDŹ: Trzeba zmodyfikować wygląd klasy z XML (Rate). 
+- PODPOWIEDŹ: Wystarczy dopisać brakujące pole (Mid).
 
 3. Wykrywanie braku danych. 
 Spróbuj obsłużyć komunikat o braku rekordów w tabeli. Wykryj taką informację (np. url: http://api.nbp.pl/api/exchangerates/rates/C/USD/2018-01-01/2018-01-01/?format=XML )

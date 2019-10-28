@@ -16,7 +16,7 @@ public class ApiNbpURLBuilder {
         if (!builder.toString().contains("/{table}")) {
             builder.append(nbpParameters.getTable());
         } else if (builder.toString().contains("{table}")) {
-            System.err.println("Kategoria została już dopisana.");
+            System.err.println("The type has already been added.");
         }
     }
 
@@ -25,7 +25,7 @@ public class ApiNbpURLBuilder {
             builder.append("/");
             builder.append(currencyCode.toString().toLowerCase());
         } else if (builder.toString().contains("/{code}")) {
-            System.err.println("Kategoria została już dopisana.");
+            System.err.println("The currency has already been added.");
         }
     }
 
@@ -34,7 +34,7 @@ public class ApiNbpURLBuilder {
             builder.append("/");
             builder.append(nbpParameters.getDateStart());
         } else if (builder.toString().contains("/{startDate}")) {
-            System.err.println("Kategoria została już dopisana.");
+            System.err.println("The start date has already been added.");
         }
     }
 
@@ -43,7 +43,7 @@ public class ApiNbpURLBuilder {
             builder.append("/");
             builder.append(nbpParameters.getDateEnd());
         } else if (builder.toString().contains("/{endDate}")) {
-            System.err.println("Kategoria została już dopisana.");
+            System.err.println("The end date has already been added.");
         }
     }
 
@@ -52,7 +52,7 @@ public class ApiNbpURLBuilder {
             builder.append("/?format=");
             builder.append(dataFormat);
         } else if (builder.toString().contains("/?format=")) {
-            System.err.println("Kategoria została już dopisana.");
+            System.err.println("The data format has already been added.");
         }
     }
 

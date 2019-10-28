@@ -1,4 +1,4 @@
-      Zadanie NBP API:
+m      Zadanie NBP API:
      
       Stwórz main'a w którym pytasz użytkownika o 4 parametry, są nimi:
       - kod waluty

@@ -5,6 +5,7 @@ import com.api_nbp.model.DataFormat;
 import com.api_nbp.model.NbpParameters;
 
 import javax.xml.bind.JAXBException;
+import java.rmi.UnmarshalException;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,7 +13,7 @@ public class Main {
         NbpParameters nbpParameters = new NbpParameters();
         CalculatedRates calculatedRates = new CalculatedRates();
 
-        System.out.println("Witaj w konsolowej aplikacji do pobierania kursow walut z API NBP");
+        System.out.println("Welcome in the console application for downloading exchange rates from the NBP API");
         nbpParameters.setCode(ScanerContentLoader.INSTANCE.loadCurrencyCode());
         nbpParameters.setDataFormat(ScanerContentLoader.INSTANCE.loadDataFormatFromUser());
 
@@ -20,7 +21,7 @@ public class Main {
             nbpParameters.setDateStart(ScanerContentLoader.INSTANCE.loadDateFromUser());
             nbpParameters.setDateEnd(ScanerContentLoader.INSTANCE.loadDateFromUser());
             if (nbpParameters.startIsAfterEnd()) {
-                System.err.println("Blad, data startowa jest po dacie koncowej. Sprobuj ponownie.");
+                System.err.println("Error, start date is after end date. Try again.");
             }
         } while (nbpParameters.startIsAfterEnd());
 
@@ -29,7 +30,7 @@ public class Main {
         String requestURL = builder.compileURL();
         System.out.println(requestURL);
 
-        NbpAPI nbpAPI ;
+        NbpAPI nbpAPI;
         try {
             nbpAPI = new NbpAPI();
             if (nbpParameters.getDataFormat() == DataFormat.XML) {
@@ -40,8 +41,11 @@ public class Main {
                 calculatedRates.calculateRates(nbpAPI.loadAndParseExchangeRatesSeriesByJASON(requestURL),
                         ScanerContentLoader.INSTANCE.loadCalculationsToDo());
             }
+        } catch (UnmarshalException e) {
+            System.err.println("No data.");
+            System.exit(1);
         } catch (JAXBException e) {
-            System.err.println("Niepoprawna budowa XML");
+            System.err.println("Incorrect XML build");
             e.printStackTrace();
             System.exit(1);
         }

@@ -24,11 +24,11 @@ public class ScanerContentLoader {
         CurrencyCode currencyCodeEnum = null;
         do {
             try {
-                System.out.println("Podaj kod waluty: " + Arrays.toString(CurrencyCode.values()) + " ?");
+                System.out.println("Currency code: " + Arrays.toString(CurrencyCode.values()) + " ?");
                 String currencyCode = INSTANCE.scanner().nextLine().toUpperCase();
                 currencyCodeEnum = CurrencyCode.valueOf(currencyCode);
             } catch (IllegalArgumentException iae) {
-                System.err.println("Niepoprawny kurs waluty, podaj go ponownie.");
+                System.err.println("Incorrect currency exchange rate, please enter it again.");
             }
         } while (currencyCodeEnum == null);
         return currencyCodeEnum;
@@ -39,11 +39,11 @@ public class ScanerContentLoader {
         DataFormat dataFormat = null;
         do {
             try {
-                System.out.println("Podaj format danych " + Arrays.toString(DataFormat.values()) + "?");
+                System.out.println("Data format: " + Arrays.toString(DataFormat.values()) + "?");
                 String dataF = INSTANCE.scanner().nextLine();
                 dataFormat = DataFormat.valueOf(dataF.toUpperCase());
             } catch (IllegalArgumentException iae) {
-                System.err.println("Niepoprawny format danych, podaj go ponownie.");
+                System.err.println("Invalid data format, please enter it again.");
             }
         } while (dataFormat == null);
         return dataFormat;
@@ -53,11 +53,11 @@ public class ScanerContentLoader {
         LocalDate dateFromUser = null;
         do {
             try {
-                System.out.println("Podaj date [yyyy-MM-dd: ]");
+                System.out.println("Date: [yyyy-MM-dd]");
                 String date = INSTANCE.scanner().nextLine();
                 dateFromUser = dataParser(date);
             } catch (DateTimeParseException dtpe) {
-                System.err.println("Niepoprawny format daty, podaj ja ponownie.");
+                System.err.println("Invalid date format, please enter it again.");
             }
         } while (dateFromUser == null);
 
@@ -67,13 +67,13 @@ public class ScanerContentLoader {
     public String loadTableFromUser() {
         String table;
         do {
-            System.out.println("Podaj tym tabeli: ASK/BID = C, MID -A/B");
+            System.out.println("Type of table: ASK/BID = C, MID -A/B");
             table = INSTANCE.scanner().nextLine().toUpperCase();
 
             if (!table.equalsIgnoreCase("C") && !table.equalsIgnoreCase("A") &&
                     !table.equalsIgnoreCase("B")) {
                 table = null;
-                System.err.println("Niepoprawny typ tabeli. Wpisz ponownie typ tabeli.");
+                System.err.println("Invalid table type. Enter the table type again.");
             }
         } while (table == null);
         return table;
@@ -82,12 +82,12 @@ public class ScanerContentLoader {
     public String loadCalculationsToDo() {
         String whatToDo;
         do {
-            System.out.println("Co chciałbyś obliczyć? [a-średni kurs waluty, b-odchylenie maksymalne, c-znalezienie min i max]");
+            System.out.println("What would you like to calculate? [a-average exchange rate, b-maximum deviation, c-finding min and max]");
             whatToDo = INSTANCE.scanner().nextLine().toUpperCase();
 
             if (!whatToDo.equalsIgnoreCase("C") && !whatToDo.equalsIgnoreCase("A") && !whatToDo.equalsIgnoreCase("B")) {
                 whatToDo = null;
-                System.err.println("Niepoprawny typ tabeli. Wpisz ponownie typ tabeli.");
+                System.err.println("Invalid table type. Enter the table type again. ");
             }
         } while (whatToDo == null);
         return whatToDo;

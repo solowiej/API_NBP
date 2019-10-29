@@ -1,7 +1,6 @@
-#CurrencyCalculator (NBP API, JSON, XML)
+CurrencyCalculator (NBP API, JSON, XML)
 
-A console application using the NBP API.
-
+CurrencyCalculator is a console application using the NBP API, JSON, XML. 
 Possible actions that can be performed:
 
 - posibility to choosing the currency that interests us

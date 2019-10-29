@@ -1,4 +1,4 @@
-NbpApiApp (NBP API, JSON, XML)
+CurrencyCalculator (NBP API, JSON, XML)
 
 Possible actions that can be performed:
 

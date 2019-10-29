@@ -1,4 +1,4 @@
-CurrencyCalculator (NBP API, JSON, XML)
+#CurrencyCalculator (NBP API, JSON, XML)
 
 A console application using the NBP API.
 
